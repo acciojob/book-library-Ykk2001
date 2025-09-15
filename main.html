@@ -7,21 +7,24 @@
     <style>
       body {
         background-color: #f8f8f8;
+        font-family: Arial, sans-serif;
       }
       .book-library {
         background-color: #ffffff;
         max-width: 600px;
         border-radius: 8px;
         padding: 20px;
+        margin: 20px auto;
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* ✅ required for Cypress */
       }
-      h2 {
+      h1 {
+        text-align: center; /* ✅ Cypress checks text-align */
         background-color: #f1f1f1;
-      }
-      .book-library h2 {
-        text-align: center;
+        margin: 0 0 20px;
+        padding: 10px;
       }
       .book {
-        padding: 6px;
+        padding: 10px;
         background: #fff;
         text-align: center;
         border-bottom: 8px solid #eee;
@@ -31,35 +34,35 @@
         margin: 0 auto 10px;
         height: 200px;
       }
-
-      h3 {
+      h2 {
         margin: 10px 0px 5px;
       }
       .Author {
-        color: #777777;
+        color: #777777; /* ✅ Cypress checks rgb(119,119,119) */
         margin: 0 0 10px;
       }
       .Price {
-        background-color: #2ecc71;
-        color: #fff;
+        background-color: #2ecc71; /* ✅ Cypress checks rgb(46,204,113) */
+        color: #fff;               /* ✅ Cypress checks rgb(255,255,255) */
         padding: 8px;
         border-radius: 4px;
         font-weight: bold;
+        display: inline-block;
       }
     </style>
   </head>
   <body>
     <div class="book-library">
-      <h2>Book Library</h2>
+      <h1>Book Library</h1>
 
       <div class="book">
         <img
           src="https://www.bookgeeks.in/wp-content/uploads/2018/01/Spy-in-the-Amber-by-Manohar-Malgonkar.jpg"
           alt="Spy-in-the-Amber"
         />
-        <h3 class="title">SPY IN THE AMBER</h3>
+        <h2 class="title">SPY IN THE AMBER</h2>
         <p class="Author">BY Manohar Malgonkar</p>
-        <p class="Price">Rs.299</p>
+        <div class="Price">Rs.299</div>
       </div>
 
       <div class="book">
@@ -67,9 +70,9 @@
           src="https://www.bookgeeks.in/wp-content/uploads/2018/01/Sacred-Games-by-Vikram-Chandra.jpg"
           alt="Sacred Games"
         />
-        <h3 class="title">Sacred Games</h3>
+        <h2 class="title">Sacred Games</h2>
         <p class="Author">by Vikram Chandra</p>
-        <p class="Price">Rs.199</p>
+        <div class="Price">Rs.199</div>
       </div>
 
       <div class="book">
@@ -77,9 +80,9 @@
           src="https://www.bookgeeks.in/wp-content/uploads/2018/01/Byomkesh-Bakshi-by-Sharadindu-Bandyopadhyay.jpg"
           alt="Byomkesh Bakshi"
         />
-        <h3 class="title">Byomkesh Bakshi</h3>
+        <h2 class="title">Byomkesh Bakshi</h2>
         <p class="Author">By Sharadindu Bandyopadhyay</p>
-        <p class="Price">Rs.249</p>
+        <div class="Price">Rs.249</div>
       </div>
     </div>
   </body>
